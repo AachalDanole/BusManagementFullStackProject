@@ -1,0 +1,82 @@
+   <!-- <div class="container" style="width:500px" >
+    <br/><br><br><br>
+    <h2>User Signin</h2>
+    
+        <fieldset>
+          <div id="legend">
+            <legend class="">Please signin to continue!!</legend>
+          </div>
+         
+    
+          <div class="control-group">
+             E-mail
+            <label class="control-label" for="email">E-mail</label>
+            <div class="controls">
+              <input type="email" id="email" name="email" placeholder="Enter your email" class="input-xlarge" #email>
+              
+            </div>
+          </div><br>
+       
+          <div class="control-group"> 
+             Password
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+              <input type="password" id="password" name="password" placeholder="Set Password" class="input-xlarge" #password>
+             
+            </div>
+          </div>
+
+
+          <br>
+     
+        <div class="control-group">
+          
+          <div class="controls">
+            <button type="submit" class="btn btn-primary" (click)="signin(email.value, password.value)">Signin</button>
+          </div>
+        </div>
+      </fieldset>
+    
+   </div>   -->
+
+
+
+   <!-- < new login page>-->
+
+
+   <!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" >
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+
+        <button (click)=singup()>Sign up</button>
+				
+			
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<label class="control-label" for="email">E-mail</label>
+            <div class="controls">
+              <input type="email" id="email" name="email" placeholder="Enter your email" class="input-xlarge" #email>
+               </div>
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+              <input type="password" id="password" name="password" placeholder="Set Password" class="input-xlarge" #password>
+            </div>
+					<button type="submit" class="btn btn-primary"(click)="signin(email.value, password.value)" >Login</button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
+ 

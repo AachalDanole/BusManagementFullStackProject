@@ -1,0 +1,34 @@
+
+<table class =" table table-striped" style="margin-left: 150px;background-color: black;opacity: 70%; padding-left:300px;padding-right: 500px;width:700px;"  >
+  
+    <thead>
+      
+        <tr>
+            <th style="background-color: black; opacity: 80%;color: white;"> User ID</th>
+            <th style="background-color: black; opacity: 80%;color: white;"> Client Name</th>
+            <th style="background-color: black; opacity: 80%;color: white;"> Email Address</th>
+            
+            
+           
+
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let userdata of user | paginate: { itemsPerPage: count, currentPage: pageNo } " style="color:white">
+            <td>{{ userdata.userID }}</td>
+            <td> {{ userdata.userName }} </td>
+            <td>{{ userdata.userEmail }}</td>
+           
+            
+           
+        </tr>
+        
+       
+
+    </tbody>
+    
+</table><br>
+
+
+      

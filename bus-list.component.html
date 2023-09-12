@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="margin-left: 10px;">
+<h3 style="color:white;margin-left: 400px;"> Bus List</h3><br><br>
+
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="input-group mb-3">
+                    <div class="input-group-append" style="margin-left: 150px;height:50px;margin-left:20px">
+                    <li class="nav-item dropdown" style=" list-style-type: none;"></li>
+
+
+                    <!-- Add another input field for location -->
+                    <input *ngIf="selectedSearchType === 'travelsName'; else sourceAndDestination" type="text" class="form-control" 
+                    [(ngModel)]="travelsName" placeholder="Search by travelsName " 
+                    class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                    style="background-color: white; color: black; border:3px solid gainsboro;" />
+      
+                  <ng-template  #sourceAndDestination>
+                      <input  type="text" class="form-control" [(ngModel)]="source" placeholder="Source" 
+                      class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                      style="background-color: white; color: black; border:3px solid gainsboro;border-radius: 10px;" />
+
+                      <input  type="text" class="form-control" [(ngModel)]="destination" placeholder="Destination" 
+                      class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                      style="background-color: white; color: black; border:3px solid gainsboro;border-radius: 10px;" />
+   
+                    </ng-template> 
+                    
+                    <ul class="dropdown-menu">
+                      <li><a id="01" class="dropdown-item" (click)="selectedSearchType = 'travelsName'"><b>Travels Name </b></a></li>
+                      <li><a id="02" class="dropdown-item" (click)="selectedSearchType = 'sourceDestination'"><b>Source and Destination </b></a></li>
+                    </ul>
+                    
+                    
+                      <button class="btn btn-outline-secondary" type="button" (click)="search(selectedSearchType)" style="color: azure;background-color:#efd426 ;border-radius: 15px;">
+                        Search
+                      </button>
+
+                      <div class="dropdown" style="height:50px">
+                        <li type="none" class="nav-item"> <h4 class="nav-link dropdown toggle" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false" style=" background-color:#efd426; 
+                           color:white; font-size: 17px; font-weight: 600; text-align: center; border: #20191b; width: 100px;
+                            margin-left: 30px;height: 45px;padding-top: 12px;margin-top: 4px;border-radius: 10px;"> Sort By </h4>
+                        <ul class="dropdown-menu">
+                        <li><a (click)="sortBy('costHigh')" class="dropdown-item"><b>Cost High to Low</b></a></li>
+                        <li><a (click)="sortBy('costLow')" class="dropdown-item"><b>Cost Low to High</b></a></li>
+                        <li><a (click)="sortBy('ratingHigh')" class="dropdown-item"><b>Rating High to Lows</b></a></li>
+                        <li><a (click)="sortBy('ratingLow')" class="dropdown-item"><b>Rating Low to High</b></a></li>
+                        </ul>
+                        </li></div>
+
+                     
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div>
+  <button class="btn btn-outline-secondary" type="button" (click)="getAcBus()" style="margin-left:60px;color:#EEE2DC;height: 50px;
+  background:#efd426;font-size:17px;font-weight: 600;margin-left: 80px;"> AC Bus </button>
+
+    <button class="btn btn-outline-secondary" type="button" (click)="getNonAcBus()"  
+        style="color:#EEE2DC;background: #efd426;font-size:17px;font-weight: 600;height: 50px;"> Non AC Bus </button>
+        
+      </div>   
+</div>
+
+
+      
+            <table class = "table table-striped" style="border: solid;margin-right: 200px;width:1200px;height:min-content;background-color: rgb(19, 19, 19);color: white;opacity:70%;margin-left: 0px;">           
+    <thead>
+        <tr>
+            <th> DriverName</th>
+            <th>  Destination </th>
+            <th> Cost</th>
+            <th> TotalSeat </th>
+            <th> AcBus </th> 
+            <th> TravelsName </th>
+            <th> Source </th>
+            <th> Rating </th>
+           
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor = "let bus of buses | paginate: { itemsPerPage: count, currentPage: pageNo }" >
+            <td> {{ bus.driverName }} </td>
+            <td> {{ bus.destination}} </td>
+            <td> {{ bus.cost }} </td>
+            <td>{{bus.totalSeat}}</td>
+            <td>{{bus.isAcBus}}</td>
+            <td>{{bus.travelsName}}</td>
+            <td>{{bus.source}}</td>
+            <td>{{bus.rating}}</td>
+            
+            <td>
+                <button (click) = "updateBus(bus.busId)" class = "btn btn-info" style="margin-left: 10px;color:#EEE2DC;background: #075e4d">Update</button>
+                <button (click) = "deleteBus(bus.busId)" class = "btn btn-danger" style="margin-left: 10px;background: #075e4d">Delete</button>
+                <button (click) = "busDetails(bus.busId)" class = "btn btn-info" style="margin-left: 10px;background: #075e4d">View</button>
+                <button (click) = "getUsersByBusId(bus.busId)" class = "btn btn-info" style="margin-left: 10px;background: #075e4d">Booked User</button>
+            </td>
+        </tr>
+        <tr *ngIf="buses !== null">
+          <button class="m-3 btn btn-sm btn-danger" (click)="deleteAllBusDetails()"style="background: #075e4d">
+              Remove All
+            </button>
+      </tr>
+    </tbody>
+</table>
+</div>
+<div> <pagination-controls (pageChange)="pageNo = $event"></pagination-controls> </div>
+
+

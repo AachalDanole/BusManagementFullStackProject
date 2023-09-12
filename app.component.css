@@ -1,0 +1,51 @@
+.navbar-light .navbar-nav .nav-link 
+{
+    
+    font-size:25px;
+    font-family: bold;
+    opacity: 70%;
+    color: black;
+    opacity: 70%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar-light .navbar-nav .nav-link.active-link
+{
+    color: var(rgb(237, 231, 231));
+    font-size:25px;
+    font-family: bold;
+    text-decoration: underline;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color:#EB984E;
+    opacity: 70%;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#A04000;
+    min-width: 100px;
+    font-size: 10px;
+  
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: #A04000;
+    padding: 12px 16px;
+    font-size: 7px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  width:200px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #EB984E;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    font-display: 10px;
+  }
+

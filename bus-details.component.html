@@ -1,0 +1,34 @@
+
+<h3 style="color:white;margin-left: 370px;"> Bus Details </h3>
+
+<div style="background-color: black;opacity: 70%;color: white;width:300px;margin-left: 330px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;padding-right:20px;border-radius: 15px;margin-top: 20px;">
+    
+    <div>
+        <label> <b> DriverName: </b></label> {{bus.driverName}}
+    </div>
+    <div>
+        <label> <b> Destination: </b></label> {{bus.destination}}
+    </div>
+    <div>
+        <label> <b> Ticket Price: </b></label> {{bus.cost}}
+    </div>
+    <div>
+        <label> <b> TotalSeat: </b></label> {{bus.totalSeat}}
+    </div>
+    <div>
+        <label> <b> AcBus: </b></label> {{bus.isAcBus}}
+    </div>
+    <div>
+        <label> <b> TravelsName: </b></label> {{bus.travelsName}}
+    </div>
+    <div>
+        <label> <b> Source: </b></label> {{bus.source}}
+    </div>
+    <div>
+        <label> <b> Rating: </b></label> {{bus.rating}}
+    </div>
+
+
+</div><br>
+
+<button (click)="bookbus(bus.busId)" class = "butn" type="submit" style="margin-left: 370px;color:#EEE2DC;background: #efd426;">Book Bus</button>

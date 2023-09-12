@@ -1,0 +1,41 @@
+
+
+    <h3 style="padding: 20px;color: white;"> Update Driver </h3>
+    <form (ngSubmit) = "onSubmit()" style="background-color: black;border-style: hidden;opacity: 70%;color:white;width: 650px;height: 750px;margin-bottom: 50px;padding-left: 10px;padding-right: 10px;height: 500px;margin-right: 0px;margin-top: 10px;padding-top: 10px;padding-right: 10px">
+    
+        <div class="form-group" style="padding-left: 10px;padding-right: 10px;width: 400px;">
+            <label> DriverName</label>
+            <input type="text" class ="form-control" id = "DriverName"
+                [(ngModel)] = "driver.name" name = "DriverName">
+        </div>
+    
+        <div class="form-group" style="padding-left: 10px;padding-right: 10px;width: 400px;">
+            <label>Age</label>
+            <input type="text" class ="form-control" id = "Destination"
+                [(ngModel)] = "driver.age" name = "Destination">
+        </div>
+
+        <div class="form-group" style="padding-left: 10px;padding-right: 10px;width: 400px;">
+            <label>Email</label>
+            <input type="email" class ="form-control" id = "source"
+                [(ngModel)] = "driver.driverEmail" name = "source">
+        </div>
+    
+        <div class="form-group"style="padding-left: 10px;padding-right: 10px;width: 400px;">
+            <label>Id Proof No</label>
+            <input type="text" class ="form-control" id = "cost"
+                [(ngModel)] = "driver.idProofNo" name = "cost">
+        </div>
+
+        <div class="form-group" style="padding-left: 10px;padding-right: 10px;width: 400px;">
+            <label>Mobile No</label>
+            <input type="number" class ="form-control" id = "TotalSeat"
+                [(ngModel)] = "driver.mobileNo" name = "TotalSeat">
+        </div>
+        <button class = "btn btn-success" type ="submit">Submit</button>   
+    </form>
+    
+
+
+
+     
